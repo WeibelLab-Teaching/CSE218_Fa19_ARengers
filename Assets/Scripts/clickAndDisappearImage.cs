@@ -11,6 +11,8 @@ namespace Microsoft.MixedReality.Toolkit.Input
         [SerializeField]
         [Tooltip("Input Action to handle")]
         private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
+
+        [Tooltip("Area-of-interest object which appears when the image box disappears")]
         public GameObject areaOfInterest;
 
         #region InputSystemGlobalHandlerListener Implementation
@@ -36,6 +38,8 @@ namespace Microsoft.MixedReality.Toolkit.Input
         {
             this.gameObject.SetActive(false);
             areaOfInterest.SetActive(true);
+
+            Debug.Log("clicked on image box.");
         }
     }
 }

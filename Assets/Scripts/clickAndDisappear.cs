@@ -11,7 +11,9 @@ namespace Microsoft.MixedReality.Toolkit.Input
         [SerializeField]
         [Tooltip("Input Action to handle")]
         private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
-        public GameObject obj;
+
+        [Tooltip("the image box gameobject which appears when area-of-interest disappears")]
+        public GameObject imgBox;
 
         #region InputSystemGlobalHandlerListener Implementation
 
@@ -34,8 +36,15 @@ namespace Microsoft.MixedReality.Toolkit.Input
         }
         void IMixedRealityInputActionHandler.OnActionEnded(BaseInputEventData eventData)
         {
+            // set the position and rotation of image box;
+            imgBox.transform.position = this.gameObject.transform.position;
+            imgBox.transform.rotation = this.gameObject.transform.rotation;
+
+            // deactivate area-of-interest and activate image box
             this.gameObject.SetActive(false);
-            obj.SetActive(true);
+            imgBox.SetActive(true);
+
+            Debug.Log("clicked on area-of-interest.");
         }
     }
 }

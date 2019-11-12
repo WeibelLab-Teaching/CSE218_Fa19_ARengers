@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 506532313}
   - component: {fileID: 506532312}
   m_Layer: 0
-  m_Name: webcam photo
+  m_Name: WebCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 506532311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599b858eb02aa094aa8c437a5dff1c45, type: 3}
+  m_Script: {fileID: 11500000, guid: dd28b86aa164c7d42918d419660fd8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTexture: {fileID: 0}
+  quad: {fileID: 464853484}
 --- !u!4 &506532313
 Transform:
   m_ObjectHideFlags: 0
@@ -636,5 +636,21 @@ PrefabInstance:
       propertyPath: imgBox
       value: 
       objectReference: {fileID: 464853484}
+    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 506532312}
+    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
+      propertyPath: InputAction.id
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
+      propertyPath: InputAction.description
+      value: None
+      objectReference: {fileID: 0}
+    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
+      propertyPath: InputAction.axisConstraint
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}

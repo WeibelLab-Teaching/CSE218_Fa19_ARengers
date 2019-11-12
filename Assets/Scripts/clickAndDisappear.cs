@@ -8,6 +8,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
 {
     public class clickAndDisappear : BaseInputHandler, IMixedRealityInputActionHandler
     {
+        public TakePicture Camera;
         [SerializeField]
         [Tooltip("Input Action to handle")]
         private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
@@ -40,6 +41,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
             imgBox.transform.position = this.gameObject.transform.position;
             imgBox.transform.rotation = this.gameObject.transform.rotation;
 
+            Camera.TakeAShot();
             // deactivate area-of-interest and activate image box
             this.gameObject.SetActive(false);
             imgBox.SetActive(true);

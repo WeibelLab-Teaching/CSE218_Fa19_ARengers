@@ -789,9 +789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFocusRequired: 1
-  initialSilenceTimeout: 5
-  autoSilenceTimeout: 20
-  recordingTime: 100
+  initialSilenceTimeout: 100000
+  autoSilenceTimeout: 100000
+  recordingTime: 5
   startRecordingOnStart: 1
   hypothesis: {fileID: 1133136657}
   result: {fileID: 1767334144}

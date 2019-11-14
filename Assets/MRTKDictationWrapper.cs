@@ -87,6 +87,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
         void IMixedRealityDictationHandler.OnDictationComplete(DictationEventData eventData)
         {
             status.text = eventData.DictationResult;
+            Debug.Log("Complete!");
         }
 
         void IMixedRealityDictationHandler.OnDictationError(DictationEventData eventData)

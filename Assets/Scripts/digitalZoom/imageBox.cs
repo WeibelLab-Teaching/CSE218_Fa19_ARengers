@@ -14,6 +14,11 @@ public class imageBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // when the gameobject is active(shown in the view)
+        if (this.gameObject.activeSelf)
+        {
+            this.gameObject.transform.LookAt(this.transform.position + Camera.main.transform.rotation * Vector3.forward,
+                                               Camera.main.transform.rotation * Vector3.up);
+        }         
     }
 }

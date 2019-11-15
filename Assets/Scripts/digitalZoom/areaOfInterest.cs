@@ -10,12 +10,13 @@ public class areaOfInterest : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(true);
-        this.gameObject.transform.position = new Vector3(0, 0, distance);
+        this.gameObject.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, distance);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

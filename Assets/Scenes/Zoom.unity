@@ -533,21 +533,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2563123230791514791, guid: abd2acc70e6ebfb46bedb7b33f528e4d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2563123230791514791, guid: abd2acc70e6ebfb46bedb7b33f528e4d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2563123230791514791, guid: abd2acc70e6ebfb46bedb7b33f528e4d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abd2acc70e6ebfb46bedb7b33f528e4d, type: 3}
 --- !u!1001 &6744508138880801227
@@ -617,40 +602,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6744508139028831769, guid: e1a02002522431d4d9a9daf41fa234b7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6744508139028831769, guid: e1a02002522431d4d9a9daf41fa234b7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6744508139028831769, guid: e1a02002522431d4d9a9daf41fa234b7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
-      propertyPath: imgBox
-      value: 
-      objectReference: {fileID: 464853484}
     - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 506532312}
     - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
-      propertyPath: InputAction.id
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
-      propertyPath: InputAction.description
-      value: None
-      objectReference: {fileID: 0}
-    - target: {fileID: 959694803, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}
-      propertyPath: InputAction.axisConstraint
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: imgBox
+      value: 
+      objectReference: {fileID: 464853484}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a02002522431d4d9a9daf41fa234b7, type: 3}

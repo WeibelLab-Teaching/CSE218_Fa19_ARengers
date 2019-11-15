@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +10,9 @@ namespace Microsoft.MixedReality.Toolkit.Input
     public class clickAndDisappearImage : BaseInputHandler, IMixedRealityInputActionHandler
     {
         [SerializeField]
-        [Tooltip("Input Action to handle")]
-        private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
+        //[Tooltip("Input Action to handle")]
+        //private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
+        private DateTime t_start, t_end;
 
         [Tooltip("Area-of-interest object which appears when the image box disappears")]
         public GameObject areaOfInterest;
@@ -32,14 +34,20 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
         void IMixedRealityInputActionHandler.OnActionStarted(BaseInputEventData eventData)
         {
-
+            t_start = DateTime.Now;
         }
         void IMixedRealityInputActionHandler.OnActionEnded(BaseInputEventData eventData)
         {
-            this.gameObject.SetActive(false);
-            areaOfInterest.SetActive(true);
+            t_end = DateTime.Now;
+            // when hold is less than 1 second, treat as a click behaviour
+            if ((t_end - t_start).TotalSeconds < 0.5)
+            {
+                this.gameObject.SetActive(false);
+                areaOfInterest.SetActive(true);
+                Debug.Log("clicked on image box.");
+            }
+            
 
-            Debug.Log("clicked on image box.");
         }
     }
 }

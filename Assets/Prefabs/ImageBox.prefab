@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3903388196482700325}
   - component: {fileID: 1165676678502289898}
   - component: {fileID: 2098309259}
+  - component: {fileID: 464853485}
   m_Layer: 0
   m_Name: ImageBox
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7078865003877425834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,10 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFocusRequired: 1
-  InputAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
   areaOfInterest: {fileID: 0}
 --- !u!114 &2098309259
 MonoBehaviour:
@@ -124,3 +121,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4556cf86ee7bc3b47a0b247670bc293c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &464853485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078865003877425834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03daa81ea5f685f4ebf6e32038d058ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostTransform: {fileID: 0}
+  manipulationType: 0
+  twoHandedManipulationType: 5
+  allowFarManipulation: 1
+  oneHandRotationModeNear: 6
+  oneHandRotationModeFar: 6
+  releaseBehavior: 3
+  constraintOnRotation: 0
+  constraintOnMovement: 1
+  smoothingActive: 1
+  smoothingAmountOneHandManip: 0.001
+  OnManipulationStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnManipulationEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []

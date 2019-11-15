@@ -545,16 +545,16 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template3D
+  metroPackageName: GrandpARent
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: D:\Daniel's unity\CSE218_Fa19_ARengers\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Template_3D
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00682f0747bad601
+  metroApplicationDescription: GrandpARent
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: GrandpARents
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

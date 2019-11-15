@@ -3,10 +3,12 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.XR.WSA.WebCam;
 
-public class Locatable_camera: MonoBehaviour
+public class TakePicture: MonoBehaviour
 {
     UnityEngine.XR.WSA.WebCam.PhotoCapture photoCaptureObject = null;
-    void TakePicture()
+    public GameObject quad;
+
+    public void TakeAShot ()
     {
         UnityEngine.XR.WSA.WebCam.PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
     }
@@ -39,25 +41,37 @@ public class Locatable_camera: MonoBehaviour
     {
         if (result.success)
         {
+            Debug.Log("Photo Captured");
             // Create our Texture2D for use and set the correct resolution
             Resolution cameraResolution = PhotoCapture.SupportedResolutions.OrderByDescending((res) => res.width * res.height).First();
             Texture2D targetTexture = new Texture2D(cameraResolution.width, cameraResolution.height);
+
+            Debug.Log(cameraResolution.width+" "+cameraResolution.height);
+
             // Copy the raw image data into our target texture
             photoCaptureFrame.UploadImageDataToTexture(targetTexture);
-            // Do as we wish with the texture such as apply it to a material, etc.
 
-            GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            Texture2D newImage = CropImage(targetTexture, 0, 0, cameraResolution.width, cameraResolution.height);
+
             Renderer quadRenderer = quad.GetComponent<Renderer>() as Renderer;
             quadRenderer.material = new Material(Shader.Find("Unlit/Texture"));
 
-            quad.transform.parent = this.transform;
-            quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
+            // quad.transform.parent = this.transform;
+            // quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
 
-            quadRenderer.material.SetTexture("_MainTex", targetTexture);
-
+            quadRenderer.material.SetTexture("_MainTex", newImage);
+            Debug.Log("awesome");
         }
         // Clean up
         photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);
+    }
+    private Texture2D CropImage(Texture2D old, int x, int y, int width, int height)
+    {
+        Color[] pix = old.GetPixels(0, 0, width, height);
+        Texture2D newTexture = new Texture2D(width, height);
+        newTexture.SetPixels(pix);
+        newTexture.Apply();
+        return newTexture;
     }
     void OnStoppedPhotoMode(UnityEngine.XR.WSA.WebCam.PhotoCapture.PhotoCaptureResult result)
     {

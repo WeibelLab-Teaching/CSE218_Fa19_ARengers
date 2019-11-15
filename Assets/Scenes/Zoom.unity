@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 506532313}
   - component: {fileID: 506532312}
   m_Layer: 0
-  m_Name: WebCam
+  m_Name: '[WebCam]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -25,9 +26,10 @@ namespace Microsoft.MixedReality.Toolkit.Input
         [SerializeField]
         [Tooltip("Whether recording should start automatically on start")]
         private bool startRecordingOnStart = false;
+        bool completed = false;
 
         private IMixedRealityDictationSystem dictationSystem;
-
+       
         public TMPro.TextMeshPro hypothesis;
         public TMPro.TextMeshPro result;
         public Text status;
@@ -80,14 +82,20 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
         void IMixedRealityDictationHandler.OnDictationResult(DictationEventData eventData)
         {
-            //result.text = eventData.DictationResult;
-            Debug.Log(eventData.DictationResult);
+            result.text = eventData.DictationResult;
+            //Debug.Log(eventData.DictationResult);
         }
 
         void IMixedRealityDictationHandler.OnDictationComplete(DictationEventData eventData)
         {
             status.text = eventData.DictationResult;
             Debug.Log("Complete!");
+
+            Task.Run( () => {
+                while (!dictationSystem.IsReadyToStart) { }
+                completed = true;
+            });
+
         }
 
         void IMixedRealityDictationHandler.OnDictationError(DictationEventData eventData)
@@ -103,12 +111,24 @@ namespace Microsoft.MixedReality.Toolkit.Input
         {
             base.Start();
 
-            dictationSystem = (InputSystem as IMixedRealityDataProviderAccess)?.GetDataProvider<IMixedRealityDictationSystem>();
-            Debug.Assert(dictationSystem != null, "No dictation system found. In order to use dictation, add a dictation system like 'Windows Dictation Input Provider' to the Data Providers in the Input System profile");
+            Debug.Log("Start() !!!");
+        }
 
-            if (startRecordingOnStart)
+        protected override void Update()
+        {
+            base.Update();
+
+            if (completed)
             {
-                StartRecording();
+                completed = false;
+                dictationSystem.StartRecordingAsync(gameObject, initialSilenceTimeout, autoSilenceTimeout, recordingTime);
+                //Task.Run(() =>
+                //{
+                //    //StopRecording();
+                //    Debug.Log("Start here!!!");
+                //    //dictationSystem.StartRecordingAsync(gameObject, initialSilenceTimeout, autoSilenceTimeout, recordingTime);
+                //});
+
             }
         }
 
@@ -119,6 +139,24 @@ namespace Microsoft.MixedReality.Toolkit.Input
             base.OnDisable();
         }
 
-        #endregion MonoBehaviour implementation
-    }
+        protected override void OnEnable()
+        {
+            if (dictationSystem == null)
+                dictationSystem = (InputSystem as IMixedRealityDataProviderAccess)?.GetDataProvider<IMixedRealityDictationSystem>();
+            Debug.Assert(dictationSystem != null, "No dictation system found. In order to use dictation, add a dictation system like 'Windows Dictation Input Provider' to the Data Providers in the Input System profile");
+
+
+            base.OnEnable();
+            if (startRecordingOnStart)
+            {
+                StartRecording();
+            }
+
+            
+        }
+
+
+
+    #endregion MonoBehaviour implementation
+}
 }

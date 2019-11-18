@@ -38,6 +38,17 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
         /// <inheritdoc />
         public bool IsListening { get; private set; } = false;
 
+        public bool IsReadyToStart {
+            get
+            {
+#if UNITY_STANDALONE_WIN || UNITY_WSA || UNITY_EDITOR_WIN
+               return !IsListening && !isTransitioning;
+#else
+                return !IsListening;
+#endif
+            }
+            private set { } }
+
         #region IMixedRealityCapabilityCheck Implementation
 
         /// <inheritdoc />
@@ -68,8 +79,19 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
 
             if (IsListening || isTransitioning || inputSystem == null || !Application.isPlaying)
             {
-                Debug.LogWarning("Unable to start recording");
-                return;
+                Debug.LogWarning(string.Format("Unable to start recording. (IsListening={0};isTransitioning={1};isPlaying={2};null={3}",
+                                IsListening, isTransitioning, Application.isPlaying, inputSystem==null));
+
+                //if (isTransitioning && Application.isPlaying)
+                //{
+                //    Debug.Log("Waiting for isTransitiong to go to false");
+                //    await (new WaitUntil(() => (isTransitioning == false))); // this is going to freeze
+                //} else
+                //{
+                    return;
+                //}
+
+                
             }
 
             hasFailed = false;
@@ -123,7 +145,8 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
 #if UNITY_STANDALONE_WIN || UNITY_WSA || UNITY_EDITOR_WIN
             if (!IsListening || isTransitioning || !Application.isPlaying)
             {
-                Debug.LogWarning("Unable to stop recording");
+                if (IsListening && Application.isPlaying)
+                    Debug.LogWarning("Unable to stop recording");
                 return null;
             }
 
@@ -146,12 +169,12 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
             }
 
             await waitUntilDictationRecognizerHasStopped;
-            Debug.Assert(dictationRecognizer.Status == SpeechSystemStatus.Stopped);
+
 
             PhraseRecognitionSystem.Restart();
 
             await waitUntilPhraseRecognitionSystemHasStarted;
-            Debug.Assert(PhraseRecognitionSystem.Status == SpeechSystemStatus.Running);
+
 
             isTransitioning = false;
             return dictationAudioClip;
@@ -199,6 +222,8 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
         private readonly WaitUntil waitUntilDictationRecognizerHasStarted = new WaitUntil(() => dictationRecognizer.Status != SpeechSystemStatus.Stopped);
         private readonly WaitUntil waitUntilDictationRecognizerHasStopped = new WaitUntil(() => dictationRecognizer.Status != SpeechSystemStatus.Running);
 
+
+
 #if UNITY_EDITOR
         /// <inheritdoc />
         public override void Initialize()
@@ -214,6 +239,7 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
             }
         }
 #endif // UNITY_EDITOR
+
 
         /// <inheritdoc />
         public override void Enable()

@@ -17,6 +17,11 @@ namespace Microsoft.MixedReality.Toolkit.Input
         bool IsListening { get; }
 
         /// <summary>
+        /// Is the system ready to be started?
+        /// </summary>
+        bool IsReadyToStart { get; }
+
+        /// <summary>
         /// Turns on the dictation recognizer and begins recording audio from the default microphone.
         /// </summary>
         /// <param name="listener">GameObject listening for the dictation input.</param>

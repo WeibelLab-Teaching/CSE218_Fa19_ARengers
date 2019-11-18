@@ -553,6 +553,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &956563833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956563835}
+  - component: {fileID: 956563834}
+  m_Layer: 0
+  m_Name: dictationRecognizer1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &956563834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956563833}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12a9b7d97522a3438369483c9b86591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFocusRequired: 0
+  initialSilenceTimeout: 10000
+  autoSilenceTimeout: 10000
+  recordingTime: 5
+  startRecordingOnStart: 0
+  hypothesis: {fileID: 1133136657}
+  result: {fileID: 1767334144}
+  status: {fileID: 1125747316}
+--- !u!4 &956563835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956563833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7326694, y: -0.16952147, z: 2.1989741}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960501079
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,10 +617,10 @@ GameObject:
   - component: {fileID: 960501080}
   - component: {fileID: 960501085}
   - component: {fileID: 960501084}
-  - component: {fileID: 960501083}
   - component: {fileID: 960501086}
   - component: {fileID: 960501087}
   - component: {fileID: 960501088}
+  - component: {fileID: 960501083}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -788,10 +839,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12a9b7d97522a3438369483c9b86591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFocusRequired: 1
+  isFocusRequired: 0
   initialSilenceTimeout: 100000
   autoSilenceTimeout: 100000
-  recordingTime: 5
+  recordingTime: 10
   startRecordingOnStart: 1
   hypothesis: {fileID: 1133136657}
   result: {fileID: 1767334144}

@@ -19,4 +19,10 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("UI scene");
     }
 
+    public void LoadSettings()
+    {
+        Debug.Log("Scene to load: Settings");
+        SceneManager.LoadScene("Settings");
+    }
+
 }

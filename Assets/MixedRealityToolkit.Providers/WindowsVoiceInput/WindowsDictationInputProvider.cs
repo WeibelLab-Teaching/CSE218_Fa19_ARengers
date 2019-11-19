@@ -117,6 +117,7 @@ namespace Microsoft.MixedReality.Toolkit.Windows.Input
             deviceName = micDeviceName;
             Microphone.GetDeviceCaps(deviceName, out minSamplingRate, out samplingRate);
 
+
             dictationRecognizer.InitialSilenceTimeoutSeconds = initialSilenceTimeout;
             dictationRecognizer.AutoSilenceTimeoutSeconds = autoSilenceTimeout;
             dictationRecognizer.Start();

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -26,13 +28,14 @@ namespace Microsoft.MixedReality.Toolkit.Input
         [SerializeField]
         [Tooltip("Whether recording should start automatically on start")]
         private bool startRecordingOnStart = false;
-        bool completed = false;
+        public static bool completed = false;
 
-        private IMixedRealityDictationSystem dictationSystem;
+        private static IMixedRealityDictationSystem dictationSystem;
        
         public TMPro.TextMeshPro hypothesis;
         public TMPro.TextMeshPro result;
         public Text status;
+        public int numSentences;
 
         /// <summary>
         /// Start a recording session in the dictation system.
@@ -77,18 +80,31 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
         void IMixedRealityDictationHandler.OnDictationHypothesis(DictationEventData eventData)
         {
-            hypothesis.text = eventData.DictationResult;
+            //hypothesis.text = eventData.DictationResult;
         }
 
         void IMixedRealityDictationHandler.OnDictationResult(DictationEventData eventData)
         {
-            result.text = eventData.DictationResult;
-            //Debug.Log(eventData.DictationResult);
+            string[] sentences = eventData.DictationResult.Split(new[] { ". " }, StringSplitOptions.RemoveEmptyEntries);
+            string textToShow = "";
+            if (sentences.Length > 0 && sentences.Length <= numSentences)
+            {
+                foreach (string stc in sentences)
+                {
+                    textToShow += stc + ".\n";
+                }
+            } else if (sentences.Length > numSentences)
+            {
+                for (int i=sentences.Length-numSentences; i<sentences.Length; ++i)
+                {
+                    textToShow += sentences[i] + ".\n";
+                }
+            }
+            result.text = textToShow;
         }
 
         void IMixedRealityDictationHandler.OnDictationComplete(DictationEventData eventData)
         {
-            status.text = eventData.DictationResult;
             Debug.Log("Complete!");
 
             Task.Run( () => {
@@ -152,7 +168,6 @@ namespace Microsoft.MixedReality.Toolkit.Input
                 StartRecording();
             }
 
-            
         }
 
 

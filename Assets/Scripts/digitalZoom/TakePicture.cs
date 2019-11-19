@@ -8,9 +8,12 @@ public class TakePicture: MonoBehaviour
     UnityEngine.XR.WSA.WebCam.PhotoCapture photoCaptureObject = null;
     public GameObject quad;
 
-    public void takePicture ()
+    public void Start ()
     {
         // Debug.Log("hi 1");
+        if (photoCaptureObject != null) {
+            photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);
+        }
         UnityEngine.XR.WSA.WebCam.PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
     }
     void OnPhotoCaptureCreated(UnityEngine.XR.WSA.WebCam.PhotoCapture captureObject)
@@ -30,15 +33,22 @@ public class TakePicture: MonoBehaviour
     }
     private void OnPhotoModeStarted(UnityEngine.XR.WSA.WebCam.PhotoCapture.PhotoCaptureResult result)
     {
-        if (result.success)
+        if (!result.success)
         {
             // take a picture
-            photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+            // photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+            Debug.LogError("Unable to start photo mode!");
         }
+        /* 
         else
         {
             Debug.LogError("Unable to start photo mode!");
         }
+        */
+    }
+
+    public void takePicture() {
+        photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
     }
 
     void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)

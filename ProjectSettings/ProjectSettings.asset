@@ -547,7 +547,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: GrandpARent
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: D:\Daniel's unity\CSE218_Fa19_ARengers\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany

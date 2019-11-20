@@ -554,7 +554,7 @@ PlayerSettings:
   metroCertificateNotAfter: 80da526971bdd601
   metroApplicationDescription: Vision and hearing aid for elderly
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: GrandpARents
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -584,7 +584,7 @@ PlayerSettings:
       InternetClientServer: False
       Location: False
       LowLevelDevices: False
-      Microphone: False
+      Microphone: True
       MusicLibrary: False
       Objects3D: False
       OfflineMapsManagement: False
@@ -605,7 +605,7 @@ PlayerSettings:
       UserNotificationListener: False
       VideosLibrary: False
       VoipCall: False
-      WebCam: False
+      WebCam: True
   metroTargetDeviceFamilies:
     Desktop: False
     Holographic: False

@@ -661,8 +661,6 @@ GameObject:
   - component: {fileID: 1621095944}
   - component: {fileID: 1621095943}
   - component: {fileID: 1621095947}
-  - component: {fileID: 1621095948}
-  - component: {fileID: 1621095946}
   m_Layer: 0
   m_Name: textBox
   m_TagString: Untagged
@@ -744,18 +742,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621095941}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1621095946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621095941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268d98b80286d1a4da583688b0f20bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1621095947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,15 +777,3 @@ MonoBehaviour:
   OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1621095948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621095941}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146b61cf7fa16e8478193512ce2632cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -25,4 +25,10 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("Setting");
     }
 
+    public void LoadMenu()
+    {
+        Debug.Log("Scene to load: Menu");
+        SceneManager.LoadScene("Menu");
+    }
+
 }

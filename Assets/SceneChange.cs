@@ -8,21 +8,21 @@ public class SceneChange : MonoBehaviour
 
     public void LoadSubtitle()
     {
-        Debug.Log("Scene to load: Subtitle");
-        SceneManager.LoadScene("Init scene");
+        Debug.Log("Scene to load: DictationScene");
+        SceneManager.LoadScene("DictationScene");
     }
 
 
     public void LoadZoom()
     {
         Debug.Log("Scene to load: Zoom");
-        SceneManager.LoadScene("UI scene");
+        SceneManager.LoadScene("Zoom");
     }
 
     public void LoadSettings()
     {
-        Debug.Log("Scene to load: Settings");
-        SceneManager.LoadScene("Settings");
+        Debug.Log("Scene to load: Setting");
+        SceneManager.LoadScene("Setting");
     }
 
 }

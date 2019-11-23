@@ -9,6 +9,7 @@ public class TakePicture : MonoBehaviour
 
     UnityEngine.XR.WSA.WebCam.PhotoCapture photoCaptureObject = null;
     public GameObject quad;
+    public GameObject areaOfInterest;
 
     public void TakeAShot()
     {
@@ -82,8 +83,15 @@ public class TakePicture : MonoBehaviour
     {
         // it works, we just need to find the real resolution for the Hololens' camera
         // and crop the correct area we want. 
-        Color[] pix = old.GetPixels(0, 0, width, height);
-        Texture2D newTexture = new Texture2D(width, height);
+        // 2048, 1152 (w, h) resolution in hololenes
+
+        Renderer areaRenderer = areaOfInterest.GetComponent<Renderer>() as Renderer;
+        Debug.Log(areaRenderer.bounds.size );
+        int areaWidth = (int) areaRenderer.bounds.size.x/2;
+        int areaHeight = (int) areaRenderer.bounds.size.y/2;
+
+        Color[] pix = old.GetPixels(1024-areaWidth, 576-areaHeight, areaWidth*2, areaHeight*2);
+        Texture2D newTexture = new Texture2D(areaWidth*2, areaHeight*2);
         newTexture.SetPixels(pix);
         newTexture.Apply();
         return newTexture;

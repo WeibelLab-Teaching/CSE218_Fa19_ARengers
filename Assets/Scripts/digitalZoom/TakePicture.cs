@@ -67,7 +67,7 @@ public class TakePicture : MonoBehaviour
             //quad.transform.parent = this.transform;
             //  quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
 
-            quadRenderer.material.SetTexture("_MainTex", newImage);
+            quadRenderer.material.SetTexture("_MainTex", null);
         }
         // Clean up
         Debug.Log("Cleaning it up");

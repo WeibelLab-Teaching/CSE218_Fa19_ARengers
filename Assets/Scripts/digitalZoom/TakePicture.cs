@@ -85,18 +85,13 @@ public class TakePicture : MonoBehaviour
         // it works, we just need to find the real resolution for the Hololens' camera
         // and crop the correct area we want. 
         // 2048, 1152 (w, h) resolution in hololenes
+        
+        RectTransform rt = (RectTransform)areaOfInterest.transform;
+        int areaWidth = (int) (rt.rect.width/2) ;
+        int areaHeight = (int) (rt.rect.height/2) ;
 
-        Renderer areaRenderer = areaOfInterest.GetComponent<Renderer>() as Renderer;
-        // Debug.Log(areaRenderer.bounds.size);
-        // int areaWidth = (int) areaRenderer.bounds.size.x/2;
-        // int areaHeight = (int) areaRenderer.bounds.size.y/2;
-        int areaWidth = (int)150;
-        int areaHeight = (int)150 ;
-
-        Color[] pix = old.GetPixels(1024-areaWidth, 576-areaHeight, areaWidth*2, areaHeight*2);
-        // Color[] pix = old.GetPixels(640 - areaWidth, 360 - areaHeight, areaWidth * 2, areaHeight * 2);
-
-        Texture2D newTexture = new Texture2D(areaWidth*2, areaHeight*2);
+        Color[] pix = old.GetPixels(1024- areaWidth, 576- areaHeight, areaWidth * 2, areaHeight * 2);
+        Texture2D newTexture = new Texture2D(areaWidth * 2, areaHeight * 2);
         newTexture.SetPixels(pix);
         newTexture.Apply();
         return newTexture;

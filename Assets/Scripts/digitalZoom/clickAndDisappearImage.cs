@@ -16,6 +16,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
         [Tooltip("Area-of-interest object which appears when the image box disappears")]
         public GameObject areaOfInterest;
+        public GameObject text;
 
         #region InputSystemGlobalHandlerListener Implementation
 
@@ -47,9 +48,10 @@ namespace Microsoft.MixedReality.Toolkit.Input
                 areaOfInterest.SetActive(true);
                 Debug.Log("clicked on image box.");
 
-                // reset the material/shader to white
+                // reset the material/shader to white and bring back the text
                 Renderer renderer = this.gameObject.GetComponent<Renderer>() as Renderer;
                 renderer.material.SetTexture("_MainTex", null);
+                text.SetActive(true);
             }
 
 

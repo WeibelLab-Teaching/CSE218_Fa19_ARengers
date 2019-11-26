@@ -45,7 +45,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
             // deactivate area-of-interest and activate image box
             this.gameObject.SetActive(false);
             imgBox.SetActive(true);
-
+            
             Debug.Log("clicked on area-of-interest.");
         }
     }

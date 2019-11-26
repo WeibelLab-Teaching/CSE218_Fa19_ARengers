@@ -8,9 +8,9 @@ public class TakePicture : MonoBehaviour
 {
 
     UnityEngine.XR.WSA.WebCam.PhotoCapture photoCaptureObject = null;
-    public GameObject quad;
+    public GameObject quad ;
     public GameObject areaOfInterest;
-
+    public GameObject text ;
     public void TakeAShot()
     {
        // Debug.Log(WebCam.Mode);
@@ -67,7 +67,8 @@ public class TakePicture : MonoBehaviour
             //quad.transform.parent = this.transform;
             //  quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
 
-            quadRenderer.material.SetTexture("_MainTex", null);
+            quadRenderer.material.SetTexture("_MainTex", newImage);
+            text.SetActive(false);
         }
         // Clean up
         Debug.Log("Cleaning it up");
@@ -86,11 +87,15 @@ public class TakePicture : MonoBehaviour
         // 2048, 1152 (w, h) resolution in hololenes
 
         Renderer areaRenderer = areaOfInterest.GetComponent<Renderer>() as Renderer;
-        Debug.Log(areaRenderer.bounds.size );
-        int areaWidth = (int) areaRenderer.bounds.size.x/2;
-        int areaHeight = (int) areaRenderer.bounds.size.y/2;
+        // Debug.Log(areaRenderer.bounds.size);
+        // int areaWidth = (int) areaRenderer.bounds.size.x/2;
+        // int areaHeight = (int) areaRenderer.bounds.size.y/2;
+        int areaWidth = (int)150;
+        int areaHeight = (int)150 ;
 
         Color[] pix = old.GetPixels(1024-areaWidth, 576-areaHeight, areaWidth*2, areaHeight*2);
+        // Color[] pix = old.GetPixels(640 - areaWidth, 360 - areaHeight, areaWidth * 2, areaHeight * 2);
+
         Texture2D newTexture = new Texture2D(areaWidth*2, areaHeight*2);
         newTexture.SetPixels(pix);
         newTexture.Apply();

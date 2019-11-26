@@ -1048,8 +1048,6 @@ MonoBehaviour:
   OnValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Microsoft.MixedReality.Toolkit.UI.SliderEvent, Microsoft.MixedReality.Toolkit.SDK,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnInteractionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -1064,8 +1062,6 @@ MonoBehaviour:
           m_StringArgument: Grab
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Microsoft.MixedReality.Toolkit.UI.SliderEvent, Microsoft.MixedReality.Toolkit.SDK,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnInteractionEnded:
     m_PersistentCalls:
       m_Calls:
@@ -1080,8 +1076,6 @@ MonoBehaviour:
           m_StringArgument: Hover
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Microsoft.MixedReality.Toolkit.UI.SliderEvent, Microsoft.MixedReality.Toolkit.SDK,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
@@ -1096,8 +1090,6 @@ MonoBehaviour:
           m_StringArgument: Hover
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Microsoft.MixedReality.Toolkit.UI.SliderEvent, Microsoft.MixedReality.Toolkit.SDK,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnHoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -1112,8 +1104,6 @@ MonoBehaviour:
           m_StringArgument: Default
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Microsoft.MixedReality.Toolkit.UI.SliderEvent, Microsoft.MixedReality.Toolkit.SDK,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &7307063430618434849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 7307063430758334042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7307063430522344680}
   m_Father: {fileID: 7307063430618434851}

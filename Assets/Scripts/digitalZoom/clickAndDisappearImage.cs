@@ -13,6 +13,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
         //[Tooltip("Input Action to handle")]
         //private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
         private DateTime t_start, t_end;
+        public TakePicture Camera;
 
         [Tooltip("Area-of-interest object which appears when the image box disappears")]
         public GameObject areaOfInterest;
@@ -46,6 +47,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
                 
                 this.gameObject.SetActive(false);
                 areaOfInterest.SetActive(true);
+                Camera.init() ;
                 Debug.Log("clicked on image box.");
 
                 // reset the material/shader to white and bring back the text

@@ -11,7 +11,7 @@ public class TakePicture : MonoBehaviour
     public GameObject quad ;
     public GameObject areaOfInterest;
     public GameObject text ;
-    public void TakeAShot()
+    public void init()
     {
        // Debug.Log(WebCam.Mode);
         
@@ -36,14 +36,16 @@ public class TakePicture : MonoBehaviour
         if (result.success)
         {
             // take a picture
-            photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+            // photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
         }
         else
         {
             Debug.LogError("Unable to start photo mode!");
         }
     }
-
+    public void  TakeAShot(){
+        photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+    }
     void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
     {
         if (result.success)

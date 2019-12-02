@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: e803cbf9c144b21458106860dc5da12d
 =======
 guid: 9ff6853934f98214fba80d34842dd586
 >>>>>>> dc07ee56366800fc101a01813be01abec68e54ad
+=======
+guid: e803cbf9c144b21458106860dc5da12d
+>>>>>>> ru_menu_scene
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

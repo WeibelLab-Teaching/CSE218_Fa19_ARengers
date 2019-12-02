@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using Microsoft.CognitiveServices.Speech;
+using System.Collections;
 
 public class Transcribe : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Transcribe : MonoBehaviour
     private object threadLocker = new object();
     private bool waitingForReco;
     private string message;
+    private Queue subtitleQueue;
 
     private bool micPermissionGranted = false;
 
@@ -32,7 +34,7 @@ public class Transcribe : MonoBehaviour
             // single utterance is determined by listening for silence at the end or until a maximum of 15
             // seconds of audio is processed.  The task returns the recognition text as result.
             // Note: Since RecognizeOnceAsync() returns only a single utterance, it is suitable only for single
-            // shot recognition like command or query.
+            // shot recognition like command or query. 
             // For long-running multi-utterance recognition, use StartContinuousRecognitionAsync() instead.
             var result = await recognizer.RecognizeOnceAsync().ConfigureAwait(false);
 
@@ -71,6 +73,8 @@ public class Transcribe : MonoBehaviour
             // Continue with normal initialization, Text and Button objects are present.
             micPermissionGranted = true;
             message = "";
+            subtitleQueue = new Queue();
+
         }
     }
 
@@ -82,11 +86,19 @@ public class Transcribe : MonoBehaviour
             if ((!waitingForReco) && micPermissionGranted)
             {
                 ButtonClick();
+                if (message != "")
+                    subtitleQueue.Enqueue(message + "\n");
+                while (subtitleQueue.Count > 3)
+                {
+                    subtitleQueue.Dequeue();
+                }
+                outputText.text = "";
+                foreach (var sub in subtitleQueue.ToArray())
+                {
+                    outputText.text += sub;
+                }
             }
-            if (outputText != null)
-            {
-                outputText.text = message;
-            }
+
         }
     }
 }

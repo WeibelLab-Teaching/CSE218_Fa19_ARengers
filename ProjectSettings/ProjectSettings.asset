@@ -549,9 +549,9 @@ PlayerSettings:
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: DefaultCompany
-  metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 80da526971bdd601
+  metroCertificateSubject: ARengers
+  metroCertificateIssuer: ARengers
+  metroCertificateNotAfter: 801764c493bfd601
   metroApplicationDescription: Vision and hearing aid for elderly
   wsaImages: {}
   metroTileShortName: GrandpARents

@@ -141,11 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  activeProfile: {fileID: 11400000, guid: 15e768b66760d834abb317121601e9a5, type: 2}
-=======
   activeProfile: {fileID: 11400000, guid: c9bbf3e7909f8f54c82fc639b1bc38d8, type: 2}
->>>>>>> ru_menu_scene
 --- !u!4 &197155018
 Transform:
   m_ObjectHideFlags: 0

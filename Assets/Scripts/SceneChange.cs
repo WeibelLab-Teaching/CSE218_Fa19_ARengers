@@ -27,14 +27,8 @@ public class SceneChange : MonoBehaviour
 
     public void LoadMenu()
     {
-<<<<<<< HEAD:Assets/Scripts/SceneChange.cs
-        Debug.Log("Scene to load: Zoom");
-        SceneManager.LoadScene("Menu");
-    }
-=======
         Debug.Log("Scene to load: Menu");
         SceneManager.LoadScene("Menu");
     }
 
->>>>>>> ru_menu_scene:Assets/SceneChange.cs
 }

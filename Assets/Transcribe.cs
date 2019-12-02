@@ -2,10 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using Microsoft.CognitiveServices.Speech;
-<<<<<<< HEAD
-=======
 using System.Collections;
->>>>>>> ru_menu_scene
 
 public class Transcribe : MonoBehaviour
 {
@@ -15,10 +12,7 @@ public class Transcribe : MonoBehaviour
     private object threadLocker = new object();
     private bool waitingForReco;
     private string message;
-<<<<<<< HEAD
-=======
     private Queue subtitleQueue;
->>>>>>> ru_menu_scene
 
     private bool micPermissionGranted = false;
 
@@ -40,11 +34,7 @@ public class Transcribe : MonoBehaviour
             // single utterance is determined by listening for silence at the end or until a maximum of 15
             // seconds of audio is processed.  The task returns the recognition text as result.
             // Note: Since RecognizeOnceAsync() returns only a single utterance, it is suitable only for single
-<<<<<<< HEAD
-            // shot recognition like command or query.
-=======
             // shot recognition like command or query. 
->>>>>>> ru_menu_scene
             // For long-running multi-utterance recognition, use StartContinuousRecognitionAsync() instead.
             var result = await recognizer.RecognizeOnceAsync().ConfigureAwait(false);
 
@@ -77,15 +67,6 @@ public class Transcribe : MonoBehaviour
         if (outputText == null)
         {
             Debug.LogError("outputText property is null! Assign a UI Text element to it.");
-<<<<<<< HEAD
-        }
-        else
-        {
-            // Continue with normal initialization, Text and Button objects are present.
-            micPermissionGranted = true;
-            message = "";
-        }
-=======
         }
         else
         {
@@ -95,7 +76,6 @@ public class Transcribe : MonoBehaviour
             subtitleQueue = new Queue();
 
         }
->>>>>>> ru_menu_scene
     }
 
     void Update()
@@ -106,13 +86,6 @@ public class Transcribe : MonoBehaviour
             if ((!waitingForReco) && micPermissionGranted)
             {
                 ButtonClick();
-<<<<<<< HEAD
-            }
-            if (outputText != null)
-            {
-                outputText.text = message;
-            }
-=======
                 if (message != "")
                     subtitleQueue.Enqueue(message + "\n");
                 while (subtitleQueue.Count > 3)
@@ -126,7 +99,6 @@ public class Transcribe : MonoBehaviour
                 }
             }
 
->>>>>>> ru_menu_scene
         }
     }
 }

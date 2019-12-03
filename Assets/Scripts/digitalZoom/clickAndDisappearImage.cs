@@ -49,18 +49,15 @@ namespace Microsoft.MixedReality.Toolkit.Input
                 areaOfInterest.SetActive(true);
                 Camera.Init() ;
                 Debug.Log("clicked on image box.");
-<<<<<<< HEAD
             }*/
+
+
+            // reset the material/shader to white and bring back the text
+            Renderer renderer = this.gameObject.GetComponent<Renderer>() as Renderer;
+            renderer.material.SetTexture("_MainTex", null);
+            text.SetActive(true);
             
-=======
-
-                // reset the material/shader to white and bring back the text
-                Renderer renderer = this.gameObject.GetComponent<Renderer>() as Renderer;
-                renderer.material.SetTexture("_MainTex", null);
-                text.SetActive(true);
-            }
-
->>>>>>> 6ec294b8d44cdfefb7d26ce788e0ec09aa0aa448
+            
 
         }
     }

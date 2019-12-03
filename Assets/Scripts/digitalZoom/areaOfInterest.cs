@@ -6,6 +6,8 @@ public class areaOfInterest : MonoBehaviour
 {
     [Tooltip("user-specified distance along z axis to the camera")]
     public float distance;
+    internal object bounds;
+
     // Start is called before the first frame update
     void Start()
     {

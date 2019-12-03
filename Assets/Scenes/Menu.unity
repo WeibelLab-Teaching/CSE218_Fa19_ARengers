@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -194,7 +194,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -502,11 +502,6 @@ PrefabInstance:
       propertyPath: VoiceCommand
       value: Select
       objectReference: {fileID: 0}
-    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0.9143114
-      objectReference: {fileID: 0}
     - target: {fileID: 3456123869903824599, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}
       propertyPath: m_IsActive
@@ -611,6 +606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.9143114
       objectReference: {fileID: 0}
     - target: {fileID: 3126786010441234081, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 15e768b66760d834abb317121601e9a5, type: 2}
+  activeProfile: {fileID: 11400000, guid: 9e7d9e0386f298b4586b2b281e5ddcf2, type: 2}
 --- !u!4 &1460388222
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,11 +1215,6 @@ PrefabInstance:
       propertyPath: Events.Array.data[3].Settings.Array.data[0].Tooltip
       value: Assign an audioclip to play on click
       objectReference: {fileID: 0}
-    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0.9143114
-      objectReference: {fileID: 0}
     - target: {fileID: 3456123869903824599, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}
       propertyPath: m_IsActive
@@ -1334,6 +1329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Say "Zoom"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.9143114
       objectReference: {fileID: 0}
     - target: {fileID: 3126786010441234081, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}
@@ -1476,11 +1476,6 @@ PrefabInstance:
       propertyPath: Events.Array.data[1].Event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0.9143114
-      objectReference: {fileID: 0}
     - target: {fileID: 3456123869903824599, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}
       propertyPath: m_IsActive
@@ -1585,6 +1580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126786008848669197, guid: 4f44c0d070528944c9bff425c6932763,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.9143114
       objectReference: {fileID: 0}
     - target: {fileID: 3126786010441234081, guid: 4f44c0d070528944c9bff425c6932763,
         type: 3}

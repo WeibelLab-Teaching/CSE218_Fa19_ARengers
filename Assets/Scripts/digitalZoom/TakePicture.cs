@@ -11,7 +11,16 @@ public class TakePicture : MonoBehaviour
     public GameObject quad ;
     public GameObject areaOfInterest;
     public GameObject text ;
-    public void init()
+
+    // Globals
+    public int camera_x = 2048;
+    public int camera_y = 1152;
+
+    private void Start()
+    {
+        UnityEngine.XR.WSA.WebCam.PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
+    }
+    public void Init()
     {
        // Debug.Log(WebCam.Mode);
         
@@ -35,6 +44,7 @@ public class TakePicture : MonoBehaviour
     {
         if (result.success)
         {
+            Debug.Log("ready to take photo!!");
             // take a picture
             // photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
         }
@@ -43,9 +53,16 @@ public class TakePicture : MonoBehaviour
             Debug.LogError("Unable to start photo mode!");
         }
     }
-    public void  TakeAShot(){
-        photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+
+    public void TakeAShot(){
+        Debug.Log("take a picture!!!");
+        Debug.Log(photoCaptureObject != null);
+        if (photoCaptureObject != null)
+        {
+            photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+        }
     }
+
     void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
     {
         if (result.success)
@@ -62,7 +79,7 @@ public class TakePicture : MonoBehaviour
             // Copy the raw image data into our target texture
             photoCaptureFrame.UploadImageDataToTexture(targetTexture);
 
-            Texture2D newImage = CropImage(targetTexture, 0, 0, cameraResolution.width, cameraResolution.height);
+            Texture2D newImage = CropImage(targetTexture, cameraResolution.width/2, cameraResolution.height/2);
 
             quadRenderer.material = new Material(Shader.Find("Unlit/Texture"));
 
@@ -82,18 +99,40 @@ public class TakePicture : MonoBehaviour
         photoCaptureObject.Dispose();
         photoCaptureObject = null;
     }
-    private Texture2D CropImage(Texture2D old, int x, int y, int width, int height)
+    private Texture2D CropImage(Texture2D old, int x, int y)
     {
         // it works, we just need to find the real resolution for the Hololens' camera
         // and crop the correct area we want. 
         // 2048, 1152 (w, h) resolution in hololenes
-        
-        RectTransform rt = (RectTransform)areaOfInterest.transform;
-        int areaWidth = (int) (rt.rect.width/2) ;
-        int areaHeight = (int) (rt.rect.height/2) ;
 
-        Color[] pix = old.GetPixels(1024- areaWidth, 576- areaHeight, areaWidth * 2, areaHeight * 2);
-        Texture2D newTexture = new Texture2D(areaWidth * 2, areaHeight * 2);
+        //RectTransform rt = (RectTransform)areaOfInterest.transform;
+        //Debug.Log(rt.rect.width);
+        //long areaWidth = (long) (rt.rect.width/2) ;
+        //long areaHeight = (long) (rt.rect.height/2) ;
+        Renderer area_Collider = areaOfInterest.GetComponent<Renderer>();
+        Vector3 area_Size = area_Collider.bounds.size;
+        float areaWidth = area_Size.x /2;
+        float areaHeight = area_Size.y /2;
+        Debug.Log("width:" + areaWidth);
+        Debug.Log("Height:" + areaHeight);
+
+        //Color[] pix = old.GetPixels(x-150, y-150, 300, 300);
+        //Texture2D newTexture = new Texture2D(300, 300);
+
+        int areaWidth_int = (int) (areaWidth*3000);
+        int areaHeight_int = (int) (areaHeight*3000);
+
+        Debug.Log("modified width: " + areaWidth_int);
+        Debug.Log("modified heigth: " + areaHeight_int);
+
+        //Color[] pix = old.GetPixels(x-150, y-150, areaWidth_int, areaHeight_int);
+        int offset_x = (int) ((camera_x - areaWidth_int) / 2);
+        int offset_y = (int) ((camera_y - areaHeight_int) / 2);
+        Color[] pix = old.GetPixels(offset_x, offset_y, areaWidth_int, areaHeight_int);
+        Texture2D newTexture = new Texture2D(areaWidth_int, areaHeight_int);
+
+        //        Color[] pix = old.GetPixels(1024- areaWidth, 576- areaHeight, areaWidth * 2, areaHeight * 2);
+        //        Texture2D newTexture = new Texture2D(areaWidth * 2, areaHeight * 2);
         newTexture.SetPixels(pix);
         newTexture.Apply();
         return newTexture;

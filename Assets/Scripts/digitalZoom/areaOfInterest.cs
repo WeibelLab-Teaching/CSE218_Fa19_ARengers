@@ -6,13 +6,13 @@ public class areaOfInterest : MonoBehaviour
 {
     [Tooltip("user-specified distance along z axis to the camera")]
     public float distance;
-    public TakePicture Camera;
+    internal object bounds;
+
     // Start is called before the first frame update
     void Start()
     {
-        Camera.init();
         this.gameObject.SetActive(true);
-        this.gameObject.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, distance);
+        //this.gameObject.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, distance);
     }
 
     // Update is called once per frame

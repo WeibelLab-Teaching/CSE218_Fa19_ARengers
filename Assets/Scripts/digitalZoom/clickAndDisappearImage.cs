@@ -47,7 +47,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
                 
                 this.gameObject.SetActive(false);
                 areaOfInterest.SetActive(true);
-                Camera.init() ;
+                Camera.Init() ;
                 Debug.Log("clicked on image box.");
 
                 // reset the material/shader to white and bring back the text

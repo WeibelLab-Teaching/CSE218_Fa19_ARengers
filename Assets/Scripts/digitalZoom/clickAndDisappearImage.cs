@@ -34,18 +34,18 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
         void IMixedRealityInputActionHandler.OnActionStarted(BaseInputEventData eventData)
         {
-            t_start = DateTime.Now;
+            //t_start = DateTime.Now;
         }
         void IMixedRealityInputActionHandler.OnActionEnded(BaseInputEventData eventData)
         {
-            t_end = DateTime.Now;
+            /*t_end = DateTime.Now;
             // when hold is less than 1 second, treat as a click behaviour
             if ((t_end - t_start).TotalSeconds < 0.5)
             {
                 this.gameObject.SetActive(false);
                 areaOfInterest.SetActive(true);
                 Debug.Log("clicked on image box.");
-            }
+            }*/
             
 
         }

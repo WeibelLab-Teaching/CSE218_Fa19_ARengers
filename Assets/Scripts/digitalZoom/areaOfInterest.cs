@@ -17,4 +17,9 @@ public class areaOfInterest : MonoBehaviour
     void Update()
     {
     }
+
+    public void activate()
+    {
+        this.gameObject.SetActive(true);
+    }
 }

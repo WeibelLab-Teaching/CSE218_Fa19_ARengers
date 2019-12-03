@@ -13,9 +13,11 @@ namespace Microsoft.MixedReality.Toolkit.Input
         //[Tooltip("Input Action to handle")]
         //private MixedRealityInputAction InputAction = MixedRealityInputAction.None;
         private DateTime t_start, t_end;
+        public TakePicture Camera;
 
         [Tooltip("Area-of-interest object which appears when the image box disappears")]
         public GameObject areaOfInterest;
+        public GameObject text;
 
         #region InputSystemGlobalHandlerListener Implementation
 
@@ -42,11 +44,18 @@ namespace Microsoft.MixedReality.Toolkit.Input
             // when hold is less than 1 second, treat as a click behaviour
             if ((t_end - t_start).TotalSeconds < 0.5)
             {
+                
                 this.gameObject.SetActive(false);
                 areaOfInterest.SetActive(true);
+                Camera.Init() ;
                 Debug.Log("clicked on image box.");
+
+                // reset the material/shader to white and bring back the text
+                Renderer renderer = this.gameObject.GetComponent<Renderer>() as Renderer;
+                renderer.material.SetTexture("_MainTex", null);
+                text.SetActive(true);
             }
-            
+
 
         }
     }

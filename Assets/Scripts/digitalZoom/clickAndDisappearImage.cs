@@ -39,26 +39,18 @@ namespace Microsoft.MixedReality.Toolkit.Input
             //t_start = DateTime.Now;
         }
         void IMixedRealityInputActionHandler.OnActionEnded(BaseInputEventData eventData)
+        { 
+
+        }
+
+        public void deActive()
         {
-            /*t_end = DateTime.Now;
-            // when hold is less than 1 second, treat as a click behaviour
-            if ((t_end - t_start).TotalSeconds < 0.5)
-            {
-                
-                this.gameObject.SetActive(false);
-                areaOfInterest.SetActive(true);
-                Camera.Init() ;
-                Debug.Log("clicked on image box.");
-            }*/
-
-
+            this.gameObject.SetActive(false);
             // reset the material/shader to white and bring back the text
+            Camera.Init();
             Renderer renderer = this.gameObject.GetComponent<Renderer>() as Renderer;
             renderer.material.SetTexture("_MainTex", null);
             text.SetActive(true);
-            
-            
-
         }
     }
 }

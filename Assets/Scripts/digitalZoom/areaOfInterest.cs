@@ -23,5 +23,6 @@ public class areaOfInterest : MonoBehaviour
     public void activate()
     {
         this.gameObject.SetActive(true);
+
     }
 }

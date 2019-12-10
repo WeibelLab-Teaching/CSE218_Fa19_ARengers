@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,7 +277,7 @@ RectTransform:
   m_GameObject: {fileID: 293690931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.01}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.01}
   m_Children:
   - {fileID: 1887120918}
   - {fileID: 1240547710}
@@ -286,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.711, y: 0.359}
+  m_AnchoredPosition: {x: -1.442, y: 0.273}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &379066609 stripped
@@ -1134,7 +1134,7 @@ RectTransform:
   m_GameObject: {fileID: 1396432471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.01}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.01}
   m_Children:
   - {fileID: 2096335954}
   - {fileID: 1947422287}
@@ -1228,8 +1228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_prompt: {fileID: 1396432471}
   slider_prompt: {fileID: 293690931}
-  time_text_prompt: 2
-  time_slider_prompt: 2
+  time_text_prompt: 5
+  time_slider_prompt: 5
 --- !u!1 &1805680261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start conversation to get transcription
+  m_text: Transcription will appear here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1496,10 +1496,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1947422288}
-    characterCount: 39
+    characterCount: 30
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -1701,12 +1701,12 @@ PrefabInstance:
     - target: {fileID: 7953871984964758427, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.514
       objectReference: {fileID: 0}
     - target: {fileID: 7953871984964758427, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 7953871984964758427, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}
@@ -1756,12 +1756,12 @@ PrefabInstance:
     - target: {fileID: 7953871984964758427, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7953871984964758427, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 658331354119390169, guid: 1d41120b98e6e8145b30c90475e02f2c,
         type: 3}

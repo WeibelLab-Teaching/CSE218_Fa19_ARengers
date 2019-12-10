@@ -21,9 +21,4 @@ public class imageBox : MonoBehaviour
                                                Camera.main.transform.rotation * Vector3.up);
         }         
     }
-
-    public void deActive()
-    {
-        this.gameObject.SetActive(false);
-    }
 }

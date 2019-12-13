@@ -4,7 +4,7 @@
 
 ## 1. Introduction
 
-Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first feature is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. In this README file, we will introduce this project and provide necessary help on how to use our system.
+Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first feature is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction).
 
 [image: anne and anna]
 
@@ -124,7 +124,7 @@ Ningshan Li ()
 
 Ying-An Chen ()
 
- Jordan Gassaway ()
+Jordan Gassaway ()
 
 Ulrich Ziegler ()
 

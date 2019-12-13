@@ -145,11 +145,11 @@ This public repository is a course project for CSE 218 at UCSD, instructed by Pr
 
 Ru Wang (ruw001@ucsd.edu)
 
-Shang-Yun Yeh ()
+Shang-Yun Yeh (shyeh@eng.ucsd.edu)
 
 Ningshan Li (nil002@ucsd.edu)
 
-Ying-An Chen ()
+Ying-An Chen (yic041@eng.ucsd.edu)
 
 Jordan Gassaway ()
 

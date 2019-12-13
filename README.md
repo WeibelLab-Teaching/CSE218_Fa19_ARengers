@@ -25,17 +25,16 @@ Before we start developing the system, the ideation process was as follows (in c
 1. Decided to develop an assistive system for elderly people, because it's good for aging societies
 
 2. Understood elderly people’s common difficulties:
-
-3. - Age-related hyperopia, hearing loss, memory loss, muscle loss...
+- Age-related hyperopia, hearing loss, memory loss, muscle loss...
 
 4. Decided on the focus of our project:
 
-5. - Help people who are hard of hearing and visually impaired
+- Help people who are hard of hearing and visually impaired
 
 6. Brainstormed on how AR technology can come into play:
 
-7. - Subtitle for one-on-one conversations
-   - Zoom for magnifying what the user sees
+- Subtitle for one-on-one conversations
+- Zoom for magnifying what the user sees
 
 
 
@@ -148,7 +147,7 @@ Ru Wang (ruw001@ucsd.edu)
 
 Shang-Yun Yeh ()
 
-Ningshan Li ()
+Ningshan Li (nil002@ucsd.edu)
 
 Ying-An Chen ()
 

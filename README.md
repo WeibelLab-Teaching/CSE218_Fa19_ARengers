@@ -4,19 +4,34 @@
 
 ## 1. Introduction
 
-Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first feature is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction).
+Our goal is to develop an AR-based system that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first one is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. We also conducted a user test to verify the usability and functionality of our system. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction).
 
-[image: anne and anna]
+[image: demo.jpg]
 
 ## 2. Motivation and Background
 According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
 
-Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve, since our target users ar elderly people.
+Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve, since our target users are elderly people.
 
-[image old people]
+![img](https://lh5.googleusercontent.com/-PxPMfmX9HbTPJzbVVoF1yb72sTO-_-xy8lJK-ouRtokAsm3sbegwSZ4BDngqvow40HHExxeu2VtijPdxp2zX7O4fzSfWqHbmG-HB4-om3sjHlupIkVS7LjyZmKEayqgXccCqsMMF2E)
 
 ## 3. Ideation
-Initially, we decided to develop an assistive system for elderly people, because population aging is a serious problem for many countries, and we can so something to help. Then, we discussed the common problems that elderly people might have, and mainly focused on vision loss and hearing loss, because AR technology can provide the user more with visual information. After that we voted for two features: Subtitle and Zoom.
+Before we start developing the system, the ideation process was as follows (in chronological order)
+
+1. Decided to develop an assistive system for elderly people, because it's good for aging societies
+
+2. Understood elderly people’s common difficulties:
+
+3. - Age-related hyperopia, hearing loss, memory loss, muscle loss...
+
+4. Decided on the focus of our project:
+
+5. - Help people who are hard of hearing and visually impaired
+
+6. Brainstormed on how AR technology can come into play:
+
+7. - Subtitle for one-on-one conversations
+   - Zoom for magnifying what the user sees
 
 
 ## 4. System Development
@@ -24,7 +39,19 @@ Initially, we decided to develop an assistive system for elderly people, because
 
 [Architecture]
 
-This system is based on Microsoft HoloLens 1, and is developed with Unity + Mixed Reality Toolkit. Besides, we used Microsoft Azure's Cognitive Service for real-time transcription.
+- Environment
+
+- - Microsoft HoloLens 1
+  - Unity + Mixed Reality Toolkit
+
+- Cloud Services
+
+- - Microsoft Azure (speech SDK)
+
+- Inputs
+
+- - Pixel M80 Video Microphone
+  - HoloLens Web Camera
 
 ### Main Features:
 
@@ -54,9 +81,9 @@ This system is based on Microsoft HoloLens 1, and is developed with Unity + Mixe
 
 **Takeaways**
 
-​	✅ Subtitle feature works well
+✅ Subtitle feature works well
 
-​	❎ Zoom App has high latency
+❎ Zoom App has high latency
 
 
 
@@ -68,11 +95,11 @@ This system is based on Microsoft HoloLens 1, and is developed with Unity + Mixe
 
 **Takeaways**
 
-​	✅ UI Easy and intuitive to use
+✅ UI Easy and intuitive to use
 
-​	✅ Instructions support first-time user
+✅ Instructions support first-time user
 
-​	❎ UI still needs refinement
+❎ UI still needs refinement
 
 
 
@@ -102,19 +129,19 @@ Responsibilities:
 
 We developed an assistive system for elderly people with age-related hearing loss and vision loss. In this system, we have two main features: Subtitle and Zoom. We achieved high accuracy and low latency for Subtitle, and implemented precise magnification of a selected area. 
 
-In the future, we will be working on the following:
+In the future, we will be working on:
 
 - Less latency for taking pictures
-- Improved interaction with environment.
-- Image with higher resolution.
-- Wider voice capture area.
-- Multiple Languages support.
+- Improved interaction with environment
+- Image with higher resolution
+- Wider voice capture area
+- Multiple Languages support
 
 
 
 ## 8. Acknowledgement
 
-This public repository is a course project for CSE 218 at UCSD, instructed by Prof. Nadir Weibel. If you are interested in this project and would like to use this application or further develop, **please contact the team first** (emails listed below). If you like the concept and want to share the video or code with others, **please cite properly!**
+This public repository is a course project for CSE 218 at UCSD, instructed by Prof. Nadir Weibel. If you are interested in this project and would like to use or further develop this system, **please contact the team first** (emails listed below). If you like the concept and want to share the video or code with others, **please cite properly!**
 
 Ru Wang (ruw001@ucsd.edu)
 
@@ -127,5 +154,3 @@ Ying-An Chen ()
 Jordan Gassaway ()
 
 Ulrich Ziegler ()
-
-

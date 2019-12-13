@@ -9,10 +9,10 @@ Our goal is to develop an AR application that helps elderly people with visual a
 ## 2. Motivation and Background
 According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
 
-Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve. In this case, AR application is a good fit for solving this problem, since we can make full use of the real space and hand gestures, making the application more user-friendly to elderly people.
+Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve, since our target users ar elderly people.
 
 ## 3. Ideation
-Firstly, we decided to develop an assistive system for elderly people, because populatio aging is a serious problem for many contries, and 
+Initially, we decided to develop an assistive system for elderly people, because populatio aging is a serious problem for many contries, and we can so something to help. Then, we discussed the common problems that elderly people might have, and mainly focused on 
 
 
 ## 3. Features

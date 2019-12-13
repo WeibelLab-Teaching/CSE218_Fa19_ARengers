@@ -1,19 +1,19 @@
-<h1 style="text-align: center">GrandpARents</h1>
+# GrandpARents: An assistive system for elderly people with age-related hearing loss and vision loss
 
 ###### Authors: Shang-Yun Yeh, Ru Wang, Ningshan Li, Ying-An Chen, Jordan Gassaway, Ulrich Ziegler
 
-## 1. Overview
+## 1. Introduction
 
-Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. The people who suffer from these impairments often have difficulties processing small textual information visually and communicating with other people. With our AR App ‘GrandpArents’, we can boost elderly people’s confidence in interpersonal and social settings, so that they can master their lives without being limited by their current perception abilities. 
+Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first feature is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. In this README file, we will introduce this project and provide necessary help on how to use our system.
 
-We will focus on two main features to the users of our App. The first feature is a real-time subtitling functionality for one-on-one conversations. With this feature, our app will show a transcription of the spoken words of the communication partner and display it in the user's field of vision, comparable to subtitles when watching a movie. This helps the hearing impaired person not only to understand the spoken words, but most importantly bring them back into the conversation. The functionality is implemented with MRTK dictation system in Unity.
+## 2. Motivation and Background
+According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
 
-With our second feature we want to help visually impaired people who have difficulties reading small text passages. With digital zoom, our app allows the user to select an area of interest in a textbook or newspaper that appears too blurry to read, and has it magnified. The magnification is a static image that is large enough for the user to read the text passage, so the user can focus on the content and understand it efficiently.
+Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve. In this case, AR application is a good fit for solving this problem, since we can make full use of the real space and hand gestures, making the application more user-friendly to elderly people.
 
-## 2. Motivation 
-Elderly people often experience diminished hearing and eyesight as they age. These conditions often present complications in performing daily tasks such as reading, communicating, or being aware of your environment. According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
+## 3. Ideation
+Firstly, we decided to develop an assistive system for elderly people, because populatio aging is a serious problem for many contries, and 
 
-Our system aims to solve problems elderly people encounter in their daily life caused by hearing impairment and eyesight loss. We also want to make the system easy to use, reducing the user’s learning curve. In this case, AR application is a good fit for solving this problem since we can make full use of the real space and hand gestures, making the application more user-friendly to elderly people. Overall, we propose an AR application described in the following sections.
 
 ## 3. Features
 The proposed AR App consists of the following two functionalities:

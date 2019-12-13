@@ -4,9 +4,11 @@
 
 ## 1. Introduction
 
-Our goal is to develop an AR-based system that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first one is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. We also conducted a user test to verify the usability and functionality of our system. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction).
+Our goal is to develop an AR-based system that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first one is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. We also conducted a user test to verify the usability and functionality of our system. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction). Check out the video demo [here](https://www.youtube.com/watch?v=fitDsPpxFF8)!
 
-[image: demo.jpg]
+![image: demo.jpg](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/demo.jpg)
+
+
 
 ## 2. Motivation and Background
 According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
@@ -14,6 +16,8 @@ According to a survey by the National Institute on Deafness and Other Communicat
 Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve, since our target users are elderly people.
 
 ![img](https://lh5.googleusercontent.com/-PxPMfmX9HbTPJzbVVoF1yb72sTO-_-xy8lJK-ouRtokAsm3sbegwSZ4BDngqvow40HHExxeu2VtijPdxp2zX7O4fzSfWqHbmG-HB4-om3sjHlupIkVS7LjyZmKEayqgXccCqsMMF2E)
+
+
 
 ## 3. Ideation
 Before we start developing the system, the ideation process was as follows (in chronological order)
@@ -34,10 +38,11 @@ Before we start developing the system, the ideation process was as follows (in c
    - Zoom for magnifying what the user sees
 
 
+
 ## 4. System Development
 ### Architecture:
 
-[Architecture]
+![Architecture](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/architecture.png)
 
 - Environment
 
@@ -65,9 +70,9 @@ Before we start developing the system, the ideation process was as follows (in c
    - The user can modify the size and location of the magnified image
    - Uses the built-in camera of HoloLens
 
-[UI sketch] 
+![UI sketch](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/UI.jpg)
 
-[link to the video]
+
 
 ## 5. Evaluation and Team Processes
 
@@ -85,8 +90,6 @@ Before we start developing the system, the ideation process was as follows (in c
 
 ❎ Zoom App has high latency
 
-
-
 #### 2. User Test for instructions and UI
 
 - See if user benefits from features
@@ -101,13 +104,11 @@ Before we start developing the system, the ideation process was as follows (in c
 
 ❎ UI still needs refinement
 
-
-
 ### Collaboration:
 
 In each Sprint Cycle (1 week)
 
-[sprint cycle diagram]
+![sprint cycle diagram](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/sprint_cycle.png)
 
 Responsibilities:
 
@@ -121,7 +122,7 @@ Responsibilities:
 
 ## 6. Agile Process
 
-[AP]
+![AP](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/agile_process.png)
 
 
 

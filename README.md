@@ -25,6 +25,7 @@ Before we start developing the system, the ideation process was as follows (in c
 1. Decided to develop an assistive system for elderly people, because it's good for aging societies
 
 2. Understood elderly people’s common difficulties:
+
 - Age-related hyperopia, hearing loss, memory loss, muscle loss...
 
 4. Decided on the focus of our project:
@@ -44,17 +45,14 @@ Before we start developing the system, the ideation process was as follows (in c
 ![Architecture](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/architecture.png)
 
 - Environment
-
-- - Microsoft HoloLens 1
+  - Microsoft HoloLens 1
   - Unity + Mixed Reality Toolkit
 
 - Cloud Services
-
-- - Microsoft Azure (speech SDK)
+  - Microsoft Azure (speech SDK)
 
 - Inputs
-
-- - Pixel M80 Video Microphone
+  - Pixel M80 Video Microphone
   - HoloLens Web Camera
 
 ### Main Features:

@@ -146,6 +146,6 @@ Ningshan Li (nil002@ucsd.edu)
 
 Ying-An Chen (yic041@eng.ucsd.edu)
 
-Jordan Gassaway ()
+Jordan Gassaway (jgassawa@ucsd.edu)
 
-Ulrich Ziegler ()
+Ulrich Ziegler (uli.ziegler@tum.de)

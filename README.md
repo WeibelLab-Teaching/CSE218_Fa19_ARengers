@@ -84,6 +84,7 @@ Before we start developing the system, the ideation process was as follows (in c
     ❎ Zoom App has high latency
 
 
+
 2. **User Test for instructions and UI:**
     - See if user benefits from features
     - Learn if instructions help user

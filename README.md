@@ -1,43 +1,151 @@
-<h1 style="text-align: center">GrandpARents</h1>
+# GrandpARents
 
 ###### Authors: Shang-Yun Yeh, Ru Wang, Ningshan Li, Ying-An Chen, Jordan Gassaway, Ulrich Ziegler
 
-## 1. Overview
+## 1. Introduction
 
-Our goal is to develop an AR application that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. The people who suffer from these impairments often have difficulties processing small textual information visually and communicating with other people. With our AR App ‘GrandpArents’, we can boost elderly people’s confidence in interpersonal and social settings, so that they can master their lives without being limited by their current perception abilities. 
+Our goal is to develop an AR-based system that helps elderly people with visual and/or hearing impairments to cope with their daily tasks. There are two main features in our system. The first one is real-time subtitle for one-on-one conversations; the second feature is Zoom, which allows the user to zoom in a selected area. We also conducted a user test to verify the usability and functionality of our system. In this README file, we will introduce this project. The user instruction is linked [here](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/wiki/User-Instruction). Check out the video demo [here](https://www.youtube.com/watch?v=fitDsPpxFF8)!
 
-We will focus on two main features to the users of our App. The first feature is a real-time subtitling functionality for one-on-one conversations. With this feature, our app will show a transcription of the spoken words of the communication partner and display it in the user's field of vision, comparable to subtitles when watching a movie. This helps the hearing impaired person not only to understand the spoken words, but most importantly bring them back into the conversation. The functionality is implemented with MRTK dictation system in Unity.
+![image: demo.jpg](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/demo.jpg)
 
-With our second feature we want to help visually impaired people who have difficulties reading small text passages. With digital zoom, our app allows the user to select an area of interest in a textbook or newspaper that appears too blurry to read, and has it magnified. The magnification is a static image that is large enough for the user to read the text passage, so the user can focus on the content and understand it efficiently.
 
-## 2. Motivation 
-Elderly people often experience diminished hearing and eyesight as they age. These conditions often present complications in performing daily tasks such as reading, communicating, or being aware of your environment. According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
 
-Our system aims to solve problems elderly people encounter in their daily life caused by hearing impairment and eyesight loss. We also want to make the system easy to use, reducing the user’s learning curve. In this case, AR application is a good fit for solving this problem since we can make full use of the real space and hand gestures, making the application more user-friendly to elderly people. Overall, we propose an AR application described in the following sections.
+## 2. Motivation and Background
+According to a survey by the National Institute on Deafness and Other Communication Disorders(NIDCD), approximately one in three people in the United States between the ages of 65 and 74 has hearing loss, and nearly half of those older than 75 have difficulty hearing, resulting in troubles in their daily life like following the doctor’s advice, hearing phones, etc. In terms of seeing, 37 million Americans older than 50 years suffer from vision loss, and one in four is older than 80, which is associated with increased fall risk, loss of independence, depression, and increased all-cause mortality.
 
-## 3. Features
-The proposed AR App consists of the following two functionalities:
+Our system aims to solve the common problems elderly people encounter in their daily life caused by age-related hearing loss and vision loss. We also want to make the system easy to use, reducing the user’s learning curve, since our target users are elderly people.
 
-* ### Real-time English subtitles for one-on-one conversation
+![img](https://lh5.googleusercontent.com/-PxPMfmX9HbTPJzbVVoF1yb72sTO-_-xy8lJK-ouRtokAsm3sbegwSZ4BDngqvow40HHExxeu2VtijPdxp2zX7O4fzSfWqHbmG-HB4-om3sjHlupIkVS7LjyZmKEayqgXccCqsMMF2E)
 
-    When the user talks to a person face to face, a subtitle will show in front of the user. The subtitle contains the words the other person utters in real-time, and it can be activated automatically when the other person is speaking. The font size and the box size can be adjusted according to the user’s preference. In the future, we may have the subtitle fixed to the position of the speaker, so that the system can support multi-person chatting scenario.
 
-* ### Digital enlargement of a static image (Image Magnification)
-    
-    The user would have a semi-transparent quad following and face the user as the cursor for the area the user wants to magnify. By air-tapping the quad, the magnified image of area enclosed will appear in front of the user. The image will rotate so it is always facing the user. We can only have one magnified image at a time. Therefore, once the user looks at the zoomed image (put the camera cursor on the image) and air-tap again, the image will disappear and the quad cursor will appear again, so the user will be able to zoom a new area again. This feature is for reading small sized text passages as they appear in newspapers, magazines or textbooks. But we can think of further fields of application for the future, e.g. when looking for objects, zooming to people’s faces etc.
 
-* ### User Interface
-    
-    Mainly, we only use air-tap to control the whole functionality and mostly our features works automatically. Hence, we believe that everyone using this application would get the hang of it pretty quick.
+## 3. Ideation
+Before we start developing the system, the ideation process was as follows (in chronological order)
 
-## 4. Technical Architecture
+1. Decided to develop an assistive system for elderly people, because it's good for aging societies
 
-Our system can be broken into two main features Digital Zoom and Conversation Subtitles. Each feature will have separate UI components with a means of navigating between the two features. The digital zoom function will use the Hololens camera for taking pictures and an image processing library for doing the zoom/enhancement. The Conversation Subtitles function will need to access the microphone to record audio, and then will pass the audio to the MRTK dictation service to transcribe the audio.
+2. Understood elderly people’s common difficulties:
+    - Age-related hyperopia, hearing loss, memory loss, muscle loss...
 
-## 5. Impact
+3. Decided on the focus of our project:
+    - Help people who are hard of hearing and visually impaired
 
-The proposed application GrandpARents is expected to have a broad impact on the life of the elderly society. They will be able to join events, interact in social settings and gather textual information that they would not have due to visual impairments. In the following we will explain the expected impact on the elderly people’s life for each feature.
+4. Brainstormed on how AR technology can come into play:
+    - Subtitle for one-on-one conversations
+    - Zoom for magnifying what the user sees
 
-The real-time subtitles for one-on-one conversation is expected to facilitate the interaction with a person in close proximity and enable smooth communication with them. The user can better interact in the conversation without missing vital content of the spoken words. We furthermore expect our app to also have a significant impact on the communication partner, since one will be able to have a more fluent and deeper conversation with the hearing impaired person. This will especially help in critical situations, where it's important the message is conveyed clearly. 
 
-The digital zoom feature is expected to improve visual perception abilities of elderly people. With the use of magnification, the user can view written information from newspapers, magazines and textbooks and consequently gather new knowledge about topics of interest. Additionally our app will help reduce errors in scenarios where a high degree of precision is needed, e.g. copying numbers off a sheet while doing taxes. Lastly, we expect our app to help overcome learning difficulties that stem from age related vision impairments.
+
+## 4. System Development
+### Architecture:
+
+![Architecture](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/architecture.png)
+
+- Environment
+  - Microsoft HoloLens 1
+  - Unity + Mixed Reality Toolkit
+
+- Cloud Services
+  - Microsoft Azure (speech SDK)
+
+- Inputs
+  - Pixel M80 Video Microphone
+  - HoloLens Web Camera
+
+### Main Features:
+
+1. **Real-time English subtitles for one-on-one conversation**
+   - Subtitles automatically generated in front of the user when someone is talking
+   - Font size can be adjusted according to the user’s preference
+   - Uses Azure Speech SDK as our speech-to-text service
+2. **Digital enlargement of a static image (Zooming in real life)**
+   - A specific square area chosen by the user can be digitally magnified
+   - By air-tapping on a square frame in front of the user, the magnified image of that area appears 
+   - The user can modify the size and location of the magnified image
+   - Uses the built-in camera of HoloLens
+
+![UI sketch](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/UI.jpg)
+
+
+
+## 5. Evaluation and Team Processes
+
+### Testing and Evaluation：
+
+1. **User Test for basic functionality:**
+    - Understand how user uses the app
+    - Find out whether features support user
+    - Find improvements for features
+
+    **Takeaways**
+
+    ✅ Subtitle feature works well
+
+    ❎ Zoom App has high latency
+
+
+
+2. **User Test for instructions and UI:**
+    - See if user benefits from features
+    - Learn if instructions help user
+    - Gain insights on UI usability
+
+    **Takeaways**
+
+    ✅ UI Easy and intuitive to use
+
+    ✅ Instructions support first-time user
+
+    ❎ UI still needs refinement
+
+### Collaboration:
+
+In each Sprint Cycle (1 week)
+
+![sprint cycle diagram](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/sprint_cycle.png)
+
+Responsibilities:
+
+| Subtitle Feature          | Zoom Feature                |
+| ------------------------- | --------------------------- |
+| Jordan (UI for Subtitles) | Ningshan (UI)               |
+| Ru (Speech Recognition)   | Ying-An (Image Capturing)   |
+| Ulrich (UI for Menu)      | Shang-Yun (Image Capturing) |
+
+
+
+## 6. Agile Process
+
+![AP](https://github.com/WeibelLab-Teaching/CSE218_Fa19_ARengers/blob/ru_final_doc/images/agile_process.png)
+
+
+
+## 7. Conclusion and Future Work
+
+We developed an assistive system for elderly people with age-related hearing loss and vision loss. In this system, we have two main features: Subtitle and Zoom. We achieved high accuracy and low latency for Subtitle, and implemented precise magnification of a selected area. 
+
+In the future, we will be working on:
+
+- Less latency for taking pictures
+- Improved interaction with environment
+- Image with higher resolution
+- Wider voice capture area
+- Multiple Languages support
+
+
+
+## 8. Acknowledgement
+
+This public repository is a course project for CSE 218 at UCSD, instructed by Prof. Nadir Weibel. If you are interested in this project and would like to use or further develop this system, **please contact the team first** (emails listed below). If you like the concept and want to share the video or code with others, **please cite properly!**
+
+Ru Wang (ruw001@ucsd.edu)
+
+Shang-Yun Yeh (shyeh@eng.ucsd.edu)
+
+Ningshan Li (nil002@ucsd.edu)
+
+Ying-An Chen (yic041@eng.ucsd.edu)
+
+Jordan Gassaway (jgassawa@ucsd.edu)
+
+Ulrich Ziegler (uli.ziegler@tum.de)

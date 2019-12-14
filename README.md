@@ -25,17 +25,14 @@ Before we start developing the system, the ideation process was as follows (in c
 1. Decided to develop an assistive system for elderly people, because it's good for aging societies
 
 2. Understood elderly people’s common difficulties:
+    - Age-related hyperopia, hearing loss, memory loss, muscle loss...
 
-- Age-related hyperopia, hearing loss, memory loss, muscle loss...
+3. Decided on the focus of our project:
+    - Help people who are hard of hearing and visually impaired
 
-4. Decided on the focus of our project:
-
-- Help people who are hard of hearing and visually impaired
-
-6. Brainstormed on how AR technology can come into play:
-
-- Subtitle for one-on-one conversations
-- Zoom for magnifying what the user sees
+4. Brainstormed on how AR technology can come into play:
+    - Subtitle for one-on-one conversations
+    - Zoom for magnifying what the user sees
 
 
 
@@ -75,31 +72,30 @@ Before we start developing the system, the ideation process was as follows (in c
 
 ### Testing and Evaluation：
 
-#### 1. User Test for basic functionality:
+1. **User Test for basic functionality:**
+    - Understand how user uses the app
+    - Find out whether features support user
+    - Find improvements for features
 
-- Understand how user uses the app
-- Find out whether features support user
-- Find improvements for features
+    **Takeaways**
 
-**Takeaways**
+    ✅ Subtitle feature works well
 
-✅ Subtitle feature works well
+    ❎ Zoom App has high latency
 
-❎ Zoom App has high latency
 
-#### 2. User Test for instructions and UI
+2. **User Test for instructions and UI:**
+    - See if user benefits from features
+    - Learn if instructions help user
+    - Gain insights on UI usability
 
-- See if user benefits from features
-- Learn if instructions help user
-- Gain insights on UI usability
+    **Takeaways**
 
-**Takeaways**
+    ✅ UI Easy and intuitive to use
 
-✅ UI Easy and intuitive to use
+    ✅ Instructions support first-time user
 
-✅ Instructions support first-time user
-
-❎ UI still needs refinement
+    ❎ UI still needs refinement
 
 ### Collaboration:
 

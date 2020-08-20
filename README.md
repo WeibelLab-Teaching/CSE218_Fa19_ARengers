@@ -149,3 +149,9 @@ Ying-An Chen (yic041@eng.ucsd.edu)
 Jordan Gassaway (jgassawa@ucsd.edu)
 
 Ulrich Ziegler (uli.ziegler@tum.de)
+
+## 9. Videos
+GrandpARents - Real demo video (https://www.youtube.com/watch?v=fitDsPpxFF8)
+GrandpARent functionality introduction video (Subtitle & Digital Zoom features) (https://www.youtube.com/watch?v=G_hjAE6zgfE)
+
+
